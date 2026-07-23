@@ -1,14 +1,12 @@
 import { ClientAnalyticsPayload, GeoIPDetails, ParsedUserAgent, DiscordWebhookPayload } from "./types";
 import { getCountryFlagEmoji } from "./utils";
 
-const DEFAULT_DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1415280247141695541/1i7noMYfM7cb23Hcbf1MuAn3g1IR5kYSQvjJumgaG7jrs5rihQKP3zOQcAnICbjkJs1Y";
-
 function getDiscordWebhookUrl(): string {
   return (
     process.env.DISCORD_QR_WEBHOOK ||
     process.env.VITE_DISCORD_QR_WEBHOOK ||
     (typeof import.meta !== "undefined" && import.meta.env ? import.meta.env.VITE_DISCORD_QR_WEBHOOK : undefined) ||
-    DEFAULT_DISCORD_WEBHOOK
+    ""
   );
 }
 

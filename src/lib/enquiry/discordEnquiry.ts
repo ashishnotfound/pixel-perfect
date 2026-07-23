@@ -1,7 +1,5 @@
 import { EnquiryFormData, DiscordWebhookPayload } from "./types";
 
-const FALLBACK_DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1415280247141695541/1i7noMYfM7cb23Hcbf1MuAn3g1IR5kYSQvjJumgaG7jrs5rihQKP3zOQcAnICbjkJs1Y";
-
 function getDiscordEnquiryWebhookUrl(): string {
   return (
     process.env.DISCORD_ENQUIRY_WEBHOOK ||
@@ -9,7 +7,7 @@ function getDiscordEnquiryWebhookUrl(): string {
     process.env.DISCORD_QR_WEBHOOK ||
     process.env.VITE_DISCORD_QR_WEBHOOK ||
     (typeof import.meta !== "undefined" && import.meta.env ? import.meta.env.VITE_DISCORD_ENQUIRY_WEBHOOK || import.meta.env.VITE_DISCORD_QR_WEBHOOK : undefined) ||
-    FALLBACK_DISCORD_WEBHOOK
+    ""
   );
 }
 
