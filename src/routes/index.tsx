@@ -12,7 +12,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import catAsset from "@/assets/cat.jpg.asset.json";
+import catImg from "@/assets/cat.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
