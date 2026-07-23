@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Sparkles, Building2, Globe, MessageSquare } from "lucide-react";
 import { EnquiryFormData, EnquiryValidationErrors } from "@/lib/enquiry/types";
+import { processWebsiteEnquiry } from "@/lib/enquiry/trackEnquiry";
 
 const BUSINESS_CATEGORIES = [
   "Dental Clinic",
@@ -127,26 +128,19 @@ export function EnquiryForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const result = await processWebsiteEnquiry(formData);
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (result.success) {
         setIsSuccess(true);
       } else {
-        if (data.errors) {
-          setErrors(data.errors);
+        if (result.errors) {
+          setErrors(result.errors as EnquiryValidationErrors);
         }
-        setSubmitErrorMessage(data.message || "Something went wrong. Please try again.");
+        setSubmitErrorMessage(result.message || "Something went wrong. Please try again.");
       }
-    } catch {
-      setSubmitErrorMessage("Network error. Please check your internet connection and try again.");
+    } catch (err) {
+      console.error("[EnquiryForm] Submit error:", err);
+      setSubmitErrorMessage("An error occurred while processing your request. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
