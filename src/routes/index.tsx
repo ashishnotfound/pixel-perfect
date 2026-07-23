@@ -274,18 +274,34 @@ function Index() {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 -z-0 bg-[radial-gradient(ellipse_at_center,_#e9defc_0%,_transparent_65%)]" />
+            {/* soft purple blob behind cat */}
+            <svg
+              viewBox="0 0 500 500"
+              className="absolute inset-0 -z-0 h-full w-full"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+            >
+              <path
+                fill="#d9c9ff"
+                opacity="0.55"
+                d="M395,120 C455,170 470,260 430,330 C395,395 315,430 240,415 C165,400 95,355 80,285 C65,215 115,140 190,105 C270,68 340,75 395,120 Z"
+              />
+            </svg>
             <img
               src={catImg}
               alt="Curious cat sticking out its tongue"
               className="relative z-10 mx-auto w-full max-w-[520px] object-contain"
             />
             {/* doodles */}
-            <span className="absolute left-2 top-4 text-2xl text-[#7c5cff]">✦</span>
-            <span className="absolute right-4 top-2 text-xl text-[#c9c1ff]">✦</span>
-            <span className="absolute right-0 bottom-10 text-2xl text-[#ff4d6d]">〜</span>
-            <span className="absolute left-4 bottom-6 text-2xl text-[#4a90ff]">〰</span>
+            <span className="absolute left-2 top-4 text-2xl text-[#7c5cff] z-20">✦</span>
+            <span className="absolute right-4 top-2 text-xl text-[#c9c1ff] z-20">✦</span>
+            <span className="absolute left-8 top-16 text-2xl text-[#7c5cff] z-20">╱╱</span>
+            <span className="absolute right-10 top-10 text-2xl text-[#ffb020] z-20">╲╲</span>
+            <span className="absolute right-0 bottom-10 text-3xl text-[#ff4d6d] z-20">〜</span>
+            <span className="absolute left-4 bottom-24 text-2xl text-[#4a90ff] z-20">〰</span>
+            <span className="absolute left-16 bottom-8 text-xl text-[#ff4d6d] z-20">ˇˇ</span>
           </div>
+
         </section>
 
         {/* Work */}
