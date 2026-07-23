@@ -33,5 +33,8 @@ dist-ssr
 powershell.cmd
 bun.lock
 bunfig.toml
+.env
+.env*
+
 
 

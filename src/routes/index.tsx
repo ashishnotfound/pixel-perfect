@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { initQRAnalytics } from "@/lib/analytics/analytics";
+import { EnquiryForm } from "@/components/EnquiryForm";
 import {
   ArrowDown,
   ArrowRight,
@@ -198,6 +200,9 @@ function Index() {
       document.title = fromQr
         ? "😹 Yep... You Scanned It | Reyo Studio"
         : "Reyo Studio | Modern Websites That Bring Customers";
+
+      // Trigger silent background QR analytics (ONLY fires if ?from=qr)
+      initQRAnalytics();
     }
   }, []);
 
@@ -279,9 +284,7 @@ function Index() {
                     View Our Work <ArrowDown className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://wa.me/918796244100"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#enquiry-form"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#e5e0d7] bg-white px-6 py-3.5 text-[15px] font-semibold text-[#0f0f10] shadow-xs hover:border-[#4a2fd6]/40 hover:text-[#4a2fd6] transition"
                   >
                     Let's Talk <ArrowRight className="h-4 w-4" />
@@ -309,9 +312,7 @@ function Index() {
                     View Our Work <ArrowDown className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://wa.me/918796244100"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#enquiry-form"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#e5e0d7] bg-white px-6 py-3.5 text-[15px] font-semibold text-[#0f0f10] shadow-xs hover:border-[#4a2fd6]/40 hover:text-[#4a2fd6] transition"
                   >
                     Book a Free Consultation <ArrowRight className="h-4 w-4" />
@@ -560,6 +561,9 @@ function Index() {
             </div>
           </div>
         </section>
+
+        {/* Website Enquiry Form */}
+        <EnquiryForm />
 
         {/* Footer */}
         <footer className="mt-10">
