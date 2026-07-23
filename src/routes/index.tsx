@@ -12,7 +12,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import catAsset from "@/assets/cat.jpg.asset.json";
+import catImg from "@/assets/cat.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -276,7 +276,7 @@ function Index() {
           <div className="relative">
             <div className="absolute inset-0 -z-0 bg-[radial-gradient(ellipse_at_center,_#e9defc_0%,_transparent_65%)]" />
             <img
-              src={catAsset.url}
+              src={catImg}
               alt="Curious cat sticking out its tongue"
               className="relative z-10 mx-auto w-full max-w-[520px] object-contain"
             />
