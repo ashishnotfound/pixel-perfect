@@ -15,6 +15,7 @@ import {
   MapPin,
   Sparkles,
   Clock,
+  ShoppingBag,
 } from "lucide-react";
 import catImg from "@/assets/cat.png";
 
@@ -43,7 +44,7 @@ export const Route = createFileRoute("/")({
 type Project = {
   name: string;
   url: string;
-  type: "Business Website" | "Web Application" | "AI Commerce Platform";
+  type: "Business Website" | "Web Application" | "AI Commerce Platform" | "Luxury E-Commerce Platform";
   category: "Websites" | "Web Applications";
   status: "Completed" | "Under Development";
   description: string;
@@ -173,11 +174,49 @@ const projects: Project[] = [
         </div>
 
         <div className="z-10 mt-2">
-          <p className="text-[15px] font-extrabold text-white">AI-Powered Commerce OS</p>
+          <p className="text-[15px] font-extrabold text-[#F5F4F0]">AI-Powered Commerce OS</p>
           <div className="mt-2.5 grid grid-cols-3 gap-1.5 text-[9px] text-center font-medium">
             <div className="rounded bg-white/10 p-1.5">Listings 🤖</div>
             <div className="rounded bg-white/10 p-1.5">Analytics 📊</div>
             <div className="rounded bg-white/10 p-1.5">Automation ⚡</div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "THREAD",
+    url: "https://e-commerce-p-five.vercel.app",
+    type: "Luxury E-Commerce Platform",
+    category: "Web Applications",
+    status: "Completed",
+    description:
+      "Premium apparel & streetwear studio featuring heavyweight organic cotton drops, minimal editorial aesthetics, and full shopping bag system.",
+    buttonText: "Visit Website",
+    bg: "bg-gradient-to-br from-[#111110] via-[#1c1b18] to-[#2d291e]",
+    content: (
+      <div className="relative flex h-full w-full flex-col justify-between p-5 text-[#F5F4F0] overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-[#8B8455]/20 blur-xl pointer-events-none" />
+
+        <div className="flex items-center justify-between z-10">
+          <span className="flex items-center gap-1.5 text-[13px] font-black tracking-widest uppercase text-[#F5F4F0]">
+            <ShoppingBag className="h-3.5 w-3.5 text-[#8B8455]" /> THREAD
+          </span>
+          <span className="rounded-full bg-[#8B8455]/20 border border-[#8B8455]/30 px-2.5 py-0.5 text-[10px] font-bold text-[#d4ceaa]">
+            SS/25 DROP
+          </span>
+        </div>
+
+        <div className="z-10">
+          <p className="text-[16px] font-black tracking-tight leading-tight uppercase">
+            WEAR THE <span className="text-[#8B8455]">SILENCE.</span>
+          </p>
+          <div className="mt-2.5 flex items-center justify-between border-t border-white/10 pt-2 text-[11px] font-medium text-white/80">
+            <span>Heavyweight Organic Cotton</span>
+            <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] text-white/90 font-mono">
+              220-300 GSM
+            </span>
           </div>
         </div>
       </div>
