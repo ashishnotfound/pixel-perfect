@@ -41,10 +41,17 @@ export function SiteFooter() {
             </div>
             <div>
               <p className="label">Direct</p>
-              <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+              <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
                 <li>
-                  <a href="mailto:hello@reyostudio.com" className="link-underline hover:text-foreground">
-                    hello@reyostudio.com
+                  <p className="mb-1 text-xs text-muted-foreground/60 uppercase tracking-wider">Email</p>
+                  <a href="mailto:reyostudio.dev@gmail.com" className="link-underline hover:text-foreground">
+                    reyostudio.dev@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <p className="mb-1 text-xs text-muted-foreground/60 uppercase tracking-wider">WhatsApp</p>
+                  <a href="https://wa.me/918796244100" target="_blank" rel="noreferrer" className="link-underline hover:text-foreground">
+                    +91 87962 44100
                   </a>
                 </li>
               </ul>

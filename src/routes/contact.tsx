@@ -40,7 +40,7 @@ function Contact() {
   const toggle = (s: string) =>
     setScope((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
 
-  const mailto = `mailto:hello@reyostudio.com?subject=${encodeURIComponent(
+  const mailto = `mailto:reyostudio.dev@gmail.com?subject=${encodeURIComponent(
     `New project — ${form.company || form.name || "Enquiry"}`,
   )}&body=${encodeURIComponent(
     `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nScope: ${
@@ -63,14 +63,27 @@ function Contact() {
             Send the real brief — the messy version is fine. We reply within two working days, and we
             will say so plainly if we&apos;re not the right studio for it.
           </p>
-          <div className="mt-12 space-y-3">
-            <p className="label">Direct</p>
-            <a
-              href="mailto:hello@reyostudio.com"
-              className="link-underline font-display block text-2xl tracking-tight md:text-3xl"
-            >
-              hello@reyostudio.com
-            </a>
+          <div className="mt-12 space-y-8">
+            <div className="space-y-3">
+              <p className="label">Email</p>
+              <a
+                href="mailto:reyostudio.dev@gmail.com"
+                className="link-underline font-display block text-2xl tracking-tight md:text-3xl"
+              >
+                reyostudio.dev@gmail.com
+              </a>
+            </div>
+            <div className="space-y-3">
+              <p className="label">WhatsApp</p>
+              <a
+                href="https://wa.me/918796244100"
+                target="_blank"
+                rel="noreferrer"
+                className="link-underline font-display block text-2xl tracking-tight md:text-3xl"
+              >
+                +91 87962 44100
+              </a>
+            </div>
           </div>
         </div>
 
